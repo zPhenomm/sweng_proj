@@ -6,13 +6,94 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/btnCalc"
+        android:layout_width="217dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/btnCalc"
+        android:textSize="20sp"
+        android:typeface="normal"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnStop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnWeather"
+        android:layout_width="217dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="147dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/btnWeather"
+        android:textSize="20sp"
+        android:typeface="normal"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNotes" />
+
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="217dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/btnStop"
+        android:textSize="20sp"
+        android:typeface="normal"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnSnake"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalc" />
+
+    <Button
+        android:id="@+id/btnSnake"
+        android:layout_width="217dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/btnSnake"
+        android:textSize="22sp"
+        android:typeface="normal"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnNotes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStop" />
+
+    <Button
+        android:id="@+id/btnNotes"
+        android:layout_width="217dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/btnNotes"
+        android:textSize="20sp"
+        android:typeface="normal"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnWeather"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSnake" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">software_engineering_project</string>
+    <string name="app_name">The Everyday Companion</string>
+    <string name="btnCalc">Calculator</string>
+    <string name="btnStop">Stopwatch</string>
+    <string name="btnSnake">Play Snake</string>
+    <string name="btnNotes">Notes</string>
+    <string name="btnWeather">Weather</string>
+    <string name="btnOpt">Options</string>
+    <string name="title_activity_calc">calcActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
