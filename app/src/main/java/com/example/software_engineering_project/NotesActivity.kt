@@ -6,6 +6,6 @@ import android.os.Bundle
 class NotesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.notes_activitiy)
+        setContentView(R.layout.notes_activity)
     }
 }

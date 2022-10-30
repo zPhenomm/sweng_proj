@@ -6,6 +6,6 @@ import android.os.Bundle
 class SnakeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.snake_activitiy)
+        setContentView(R.layout.snake_activity)
     }
 }
