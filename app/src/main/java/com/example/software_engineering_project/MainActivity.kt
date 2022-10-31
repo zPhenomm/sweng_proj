@@ -43,13 +43,13 @@ class MainActivity : AppCompatActivity(), OnClickListener{
     // main menu buttons onclick
     override fun onClick(v: View) {
         when(v.getId()){
-            R.id.btnWeather -> {val intent = Intent(this, CalcActivity::class.java)
+            R.id.btnWeather -> {val intent = Intent(this, WeatherActivity::class.java)
                 startActivity(intent)}
             R.id.btnCalc -> {val intent = Intent(this, CalcActivity::class.java)
                 startActivity(intent)}
-            R.id.btnSnake -> {val intent = Intent(this, CalcActivity::class.java)
+            R.id.btnSnake -> {val intent = Intent(this, SnakeActivity::class.java)
                 startActivity(intent)}
-            R.id.btnStop -> {val intent = Intent(this, CalcActivity::class.java)
+            R.id.btnStop -> {val intent = Intent(this, StopActivity::class.java)
                 startActivity(intent)}
             R.id.btnNotes -> {val intent = Intent(this, NotesActivity::class.java)
                 startActivity(intent)}
