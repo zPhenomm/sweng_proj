@@ -10,52 +10,49 @@ import android.widget.TextView
 import android.util.Log
 
 
-class SnakeActivity : AppCompatActivity(), OnClickListener {
+class SnakeActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.snake_activity)
 
-        // create listeners for buttons
-        var btn: Button = findViewById(R.id.btnUp)
-        btn.setOnClickListener(this)
-        btn = findViewById(R.id.btnDown)
-        btn.setOnClickListener(this)
-        btn = findViewById(R.id.btnLeft)
-        btn.setOnClickListener(this)
-        btn = findViewById(R.id.btnRight)
-        btn.setOnClickListener(this)
-        btn = findViewById(R.id.btnStart)
-        btn.setOnClickListener(this)
-
         val view: SnakeView = findViewById(R.id.snakeView)
         val score: TextView = findViewById(R.id.score)
+        val game = SnakeGame()
+        var started = false
 
-    }
+        // create listeners for buttons
+        var btn: Button = findViewById(R.id.btnUp)
+        btn.setOnClickListener{
+            if(game.dir != 2){
+                game.dir = 0
+            }
+        }
 
-    // handler for button clicks
-    override fun onClick(v: View) {
-        when (v.getId()) {
-            R.id.btnWeather -> {
-                val intent = Intent(this, WeatherActivity::class.java)
-                startActivity(intent)
+        btn = findViewById(R.id.btnDown)
+        btn.setOnClickListener {
+            if(game.dir != 0){
+                game.dir = 2
             }
-            R.id.btnCalc -> {
-                val intent = Intent(this, CalcActivity::class.java)
-                startActivity(intent)
+        }
+        btn = findViewById(R.id.btnLeft)
+        btn.setOnClickListener{
+            if(game.dir != 1) {
+                game.dir = 3
             }
-            R.id.btnSnake -> {
-                val intent = Intent(this, SnakeActivity::class.java)
-                startActivity(intent)
+        }
+        btn = findViewById(R.id.btnRight)
+        btn.setOnClickListener{
+            if(game.dir != 3){
+                game.dir = 1
             }
-            R.id.btnStop -> {
-                val intent = Intent(this, StopActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.btnNotes -> {
-                val intent = Intent(this, NotesActivity::class.java)
-                startActivity(intent)
+        }
+        btn = findViewById(R.id.btnStart)
+        btn.setOnClickListener{
+            if(!started){
+                started = true
+                Thread { game.play(score, view) }.start()
             }
         }
     }
-
 }
