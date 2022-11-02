@@ -1,12 +1,15 @@
 package com.example.software_engineering_project
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import android.util.Log
 
 
 class SnakeActivity : AppCompatActivity() {
+
+    lateinit var gamethread : Thread
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,13 +19,14 @@ class SnakeActivity : AppCompatActivity() {
         val score: TextView = findViewById(R.id.score)
         val go: TextView = findViewById(R.id.go)
         val game = SnakeGame()
+        // game on separate thread so UI doesnt freeze when calling sleep
+        gamethread = Thread{game.play(score, go, view, findViewById(R.id.btnStart))}
 
         // create listeners for buttons
         var btn: Button = findViewById(R.id.btnUp)
         btn.setOnClickListener{
             game.setDirection(0)
         }
-
         btn = findViewById(R.id.btnDown)
         btn.setOnClickListener {
             game.setDirection(2)
@@ -38,14 +42,22 @@ class SnakeActivity : AppCompatActivity() {
         btn = findViewById(R.id.btnStart)
         btn.setOnClickListener{
             if(!game.started){
-                game.started = true
-                Thread { game.play(score, go, view, btn) }.start()  // separate thread so UI doesnt freeze when calling sleep
-                btn.text = "Stop"
+                //If thread was terminated before, create new one
+                if(!gamethread.isAlive){
+                    gamethread = Thread{game.play(score, go, view, btn)}
+                    gamethread.start()
+                }
             }
             else{
-                game.started = false
-                btn.text = "Restart"
+                // Immediately end game thread when stop is pressed without waiting for sleep cycle
+                if(gamethread.isAlive){
+                    gamethread.interrupt()
+                }
             }
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        gamethread.interrupt()
     }
 }

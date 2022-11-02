@@ -3,9 +3,10 @@ package com.example.software_engineering_project
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.view.isVisible
 import kotlin.random.Random
 
-class SnakeGame {
+class SnakeGame{
     // The snake is a list of coordinate tuples representing the body parts
     var snakebody = arrayListOf<Pair<Int, Int>>()
     val gridX = 16
@@ -19,14 +20,17 @@ class SnakeGame {
 
     fun play(score: TextView, go: TextView, view: SnakeView, btn: Button){
         var last = Pair(0, 0)
-        var tmp = Pair(0, 0)
-        var flag = false
+        var tmp: Pair<Int, Int>
+        var flag: Boolean
+        snakebody.clear()
         snakebody.add(Pair(8, 8))
         snakebody.add(Pair(8, 9))
         snakebody.add(Pair(8, 10))
         score.text = "score: $points"
+        started = true
         view.started = started
         view.invalidate()
+        btn.setText("STOP")
 
         while(started){
             go.text = ""
@@ -96,16 +100,23 @@ class SnakeGame {
             view.apple = apple
             score.text = "score: $points"
             view.invalidate()
-            Thread.sleep(250)  // 4 FPS!
+            try{
+                Thread.sleep(200)  // 4 FPS!
+            }catch(e: InterruptedException){
+                btn.isClickable = false
+                Thread.sleep(20)
+                break
+            }
         }
-        go.text = "GAMEOVER!"
+        go.text = "GAME OVER!"
         btn.text = "RESTART"
-        snakebody.clear()
         apple = Pair(1, 2)
         points = 0
         dir = 0
         dir_buffer = 0
         started = false
+        btn.isClickable = true
+        return
     }
 
 
