@@ -113,13 +113,11 @@ class CalcActivity : AppCompatActivity(), OnClickListener {
         if(s == "=") {
             try{
                 var e: Expression = ExpressionBuilder(equation).build()
-                var result = e.evaluate()
-                if(result % 1 == 0.0){  // if double decimal place is 0, remove it
-                    view.text = result.toLong().toString()
+                var result = e.evaluate().toString()
+                if(result.last().code == 48){  // if double decimal place is 0, remove it
+                    result = result.dropLast(2)
                 }
-                else{
-                    view.text = result.toString()
-                }
+                view.text = result
             }
             catch(e: java.lang.IllegalArgumentException){
                 view.text = "Syntax Error"
