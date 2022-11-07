@@ -9,12 +9,12 @@
     <string name="title_activity_calc">calcActivity</string>
     <string name="score">score:</string>
     <string name="start">START!</string>
-    <!-- Strings used for fragments for navigation -->
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="up">↑</string>
     <string name="down">↓</string>
     <string name="left">←</string>
     <string name="right">→</string>
+    <string name="calculator">Calculator</string>
 
 </resources>

@@ -35,9 +35,9 @@ class SnakeGame{
         while(started){
             go.text = ""
             dir = dir_buffer  // take last button press from last sleep interval
+            last = snakebody[0]
             if(dir == 0){  // up
                 // move head
-                last = snakebody[0]
                 snakebody[0] = Pair(snakebody[0].first, snakebody[0].second - 1)
                 // if out of bounds teleport
                 if(snakebody[0].second == -1){
@@ -46,7 +46,6 @@ class SnakeGame{
             }
             else if(dir == 1){  // right
                 // move head
-                last = snakebody[0]
                 snakebody[0] = Pair(snakebody[0].first + 1, snakebody[0].second)
                 // if out of bounds teleport
                 if(snakebody[0].first == gridX){
@@ -55,7 +54,6 @@ class SnakeGame{
             }
             else if(dir == 2){ // down
                 // move head
-                last = snakebody[0]
                 snakebody[0] = Pair(snakebody[0].first, snakebody[0].second + 1)
                 // if out of bounds teleport
                 if(snakebody[0].second == gridY){
@@ -64,7 +62,6 @@ class SnakeGame{
             }
             else if(dir == 3){  // left
                 // move head
-                last = snakebody[0]
                 snakebody[0] = Pair(snakebody[0].first - 1, snakebody[0].second)
                 // if out of bounds teleport
                 if(snakebody[0].first == -1){
