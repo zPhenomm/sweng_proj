@@ -16,5 +16,6 @@
     <string name="left">←</string>
     <string name="right">→</string>
     <string name="calculator">Calculator</string>
+    <string name="rad">* sin, cos, tan input in rad</string>
 
 </resources>

@@ -10,7 +10,7 @@
         android:id="@+id/btnLeft"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="85dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="55dp"
         android:fontFamily="sans-serif-black"
         android:insetTop="0dp"
@@ -26,7 +26,7 @@
         android:textStyle="bold"
         app:iconPadding="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/btnDown" />
 
     <Button
         android:id="@+id/btnDown"
@@ -55,7 +55,7 @@
         android:id="@+id/btnRight"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="85dp"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="55dp"
         android:fontFamily="sans-serif-black"
         android:insetTop="0dp"
@@ -68,10 +68,11 @@
         android:text="@string/right"
         android:textAlignment="center"
         android:textSize="38sp"
+
         android:textStyle="bold"
         app:iconPadding="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/btnUp" />
 
     <Button
         android:id="@+id/btnUp"
@@ -108,6 +109,7 @@
         android:textAlignment="viewStart"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btnStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -122,6 +124,7 @@
         android:textColor="#FF0000"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btnStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/score" />
 
@@ -136,15 +139,14 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/score"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.software_engineering_project.SnakeView
         android:id="@+id/snakeView"
         android:layout_width="350dp"
         android:layout_height="350dp"
-        android:layout_marginStart="21dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="21dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnStart" />

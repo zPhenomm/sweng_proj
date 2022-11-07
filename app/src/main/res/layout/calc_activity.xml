@@ -10,12 +10,12 @@
         android:id="@+id/calcBtnPlus"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-black"
         android:text="+"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtnRoot"
         app:layout_constraintStart_toEndOf="@+id/calcBtn3"
         app:layout_constraintTop_toBottomOf="@+id/eqView" />
 
@@ -23,12 +23,12 @@
         android:id="@+id/calcBtnMinus"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="-"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtnSin"
         app:layout_constraintStart_toEndOf="@+id/calcBtn6"
         app:layout_constraintTop_toBottomOf="@+id/calcBtnPlus" />
 
@@ -36,12 +36,12 @@
         android:id="@+id/calcBtnFactor"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="*"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtnCos"
         app:layout_constraintStart_toEndOf="@+id/calcBtn9"
         app:layout_constraintTop_toBottomOf="@+id/calcBtnMinus" />
 
@@ -55,6 +55,7 @@
         android:text="1"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtn2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eqView" />
 
@@ -62,12 +63,12 @@
         android:id="@+id/calcBtnOpenBracket"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="("
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtnCloseBracket"
         app:layout_constraintStart_toEndOf="@+id/calcBtnClear"
         app:layout_constraintTop_toBottomOf="@+id/calcBtnDivide" />
 
@@ -75,12 +76,12 @@
         android:id="@+id/calcBtnClear"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="C"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtnOpenBracket"
         app:layout_constraintStart_toEndOf="@+id/calcBtnEq"
         app:layout_constraintTop_toBottomOf="@+id/calcBtnExp" />
 
@@ -88,25 +89,27 @@
         android:id="@+id/calcBtnCloseBracket"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-black"
         android:text=")"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/calcBtnOpenBracket"
         app:layout_constraintTop_toBottomOf="@+id/calcBtnTan" />
 
     <Button
         android:id="@+id/calcBtnEq"
-        android:layout_width="136dp"
+        android:layout_width="132dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="="
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtnClear"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calcBtn0" />
 
@@ -114,12 +117,12 @@
         android:id="@+id/calcBtnExp"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="^"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtnDivide"
         app:layout_constraintStart_toEndOf="@+id/calcBtnDot"
         app:layout_constraintTop_toBottomOf="@+id/calcBtn9" />
 
@@ -127,12 +130,13 @@
         android:id="@+id/calcBtnRoot"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-black"
         android:text="√"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/calcBtnPlus"
         app:layout_constraintTop_toBottomOf="@+id/eqView" />
 
@@ -140,12 +144,13 @@
         android:id="@+id/calcBtnSin"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-black"
         android:text="sin"
         android:textAlignment="center"
         android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/calcBtnMinus"
         app:layout_constraintTop_toBottomOf="@+id/calcBtnRoot" />
 
@@ -153,12 +158,13 @@
         android:id="@+id/calcBtnCos"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-black"
         android:text="cos"
         android:textAlignment="center"
         android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/calcBtnFactor"
         app:layout_constraintTop_toBottomOf="@+id/calcBtnSin" />
 
@@ -166,12 +172,13 @@
         android:id="@+id/calcBtnTan"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-black"
         android:text="tan"
         android:textAlignment="center"
         android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/calcBtnDivide"
         app:layout_constraintTop_toBottomOf="@+id/calcBtnCos" />
 
@@ -180,11 +187,12 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="0"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtnDot"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calcBtn7" />
 
@@ -192,14 +200,13 @@
         android:id="@+id/eqView"
         android:layout_width="359dp"
         android:layout_height="64dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
+        android:scrollbars="vertical"
         android:textColor="#000000"
         android:textSize="24sp"
-        android:scrollbars = "vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calcName" />
 
@@ -207,9 +214,9 @@
         android:id="@+id/calcName"
         android:layout_width="354dp"
         android:layout_height="34dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/calculator"
         android:textAlignment="center"
@@ -223,12 +230,12 @@
         android:id="@+id/calcBtnDivide"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="/"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtnTan"
         app:layout_constraintStart_toEndOf="@+id/calcBtnExp"
         app:layout_constraintTop_toBottomOf="@+id/calcBtnFactor" />
 
@@ -236,12 +243,12 @@
         android:id="@+id/calcBtnDot"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="."
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtnExp"
         app:layout_constraintStart_toEndOf="@+id/calcBtn0"
         app:layout_constraintTop_toBottomOf="@+id/calcBtn8" />
 
@@ -249,12 +256,12 @@
         android:id="@+id/calcBtn2"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-black"
         android:text="2"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtn3"
         app:layout_constraintStart_toEndOf="@+id/calcBtn1"
         app:layout_constraintTop_toBottomOf="@+id/eqView" />
 
@@ -262,12 +269,12 @@
         android:id="@+id/calcBtn3"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-black"
         android:text="3"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtnPlus"
         app:layout_constraintStart_toEndOf="@+id/calcBtn2"
         app:layout_constraintTop_toBottomOf="@+id/eqView" />
 
@@ -276,11 +283,12 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="4"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtn5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calcBtn1" />
 
@@ -288,12 +296,12 @@
         android:id="@+id/calcBtn5"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="5"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtn6"
         app:layout_constraintStart_toEndOf="@+id/calcBtn4"
         app:layout_constraintTop_toBottomOf="@+id/calcBtn2" />
 
@@ -301,12 +309,12 @@
         android:id="@+id/calcBtn6"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="6"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtnMinus"
         app:layout_constraintStart_toEndOf="@+id/calcBtn5"
         app:layout_constraintTop_toBottomOf="@+id/calcBtn3" />
 
@@ -315,11 +323,12 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="7"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtn8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calcBtn4" />
 
@@ -327,12 +336,12 @@
         android:id="@+id/calcBtn8"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="8"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtn9"
         app:layout_constraintStart_toEndOf="@+id/calcBtn7"
         app:layout_constraintTop_toBottomOf="@+id/calcBtn5" />
 
@@ -340,13 +349,25 @@
         android:id="@+id/calcBtn9"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="9"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/calcBtnFactor"
         app:layout_constraintStart_toEndOf="@+id/calcBtn8"
         app:layout_constraintTop_toBottomOf="@+id/calcBtn6" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="172dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/rad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calcBtnOpenBracket" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

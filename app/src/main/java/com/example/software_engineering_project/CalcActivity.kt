@@ -77,7 +77,7 @@ class CalcActivity : AppCompatActivity(), OnClickListener {
         btn.setOnClickListener(this)
     }
 
-    // main menu buttons onclick
+
     override fun onClick(v: View) {
         when(v.getId()){
             R.id.calcBtn1 -> manageEq("1")
@@ -94,11 +94,11 @@ class CalcActivity : AppCompatActivity(), OnClickListener {
             R.id.calcBtnMinus -> manageEq("-")
             R.id.calcBtnFactor -> manageEq("*")
             R.id.calcBtnDivide -> manageEq("/")
-            R.id.calcBtnSin -> manageEq("sin(")
-            R.id.calcBtnCos -> manageEq("cos(")
-            R.id.calcBtnTan -> manageEq("tan(")
-            R.id.calcBtnRoot -> manageEq("sqrt(")
-            R.id.calcBtnExp -> manageEq("exp(")
+            R.id.calcBtnSin -> manageEq("sin")
+            R.id.calcBtnCos -> manageEq("cos")
+            R.id.calcBtnTan -> manageEq("tan")
+            R.id.calcBtnRoot -> manageEq("sqrt")
+            R.id.calcBtnExp -> manageEq("^")
             R.id.calcBtnDot -> manageEq(".")
             R.id.calcBtnOpenBracket -> manageEq("(")
             R.id.calcBtnCloseBracket -> manageEq(")")
@@ -108,16 +108,18 @@ class CalcActivity : AppCompatActivity(), OnClickListener {
         }
     }
 
+
     fun manageEq(s: String){
         if(s == "=") {
-            var result : Double = 0.0
             try{
                 var e: Expression = ExpressionBuilder(equation).build()
-                result = e.evaluate()
-                if((result % 1).toInt() == 0){  //TODO: If double decimal place is 0, remove it
-                    view.text = result.toInt().toString()
+                var result = e.evaluate()
+                if(result % 1 == 0.0){  // if double decimal place is 0, remove it
+                    view.text = result.toLong().toString()
                 }
-                view.text = result.toString()
+                else{
+                    view.text = result.toString()
+                }
             }
             catch(e: java.lang.IllegalArgumentException){
                 view.text = "Syntax Error"
