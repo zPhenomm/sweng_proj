@@ -1,6 +1,5 @@
 package com.example.software_engineering_project
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
@@ -10,18 +9,17 @@ import android.widget.Button
 import android.widget.TextView
 import net.objecthunter.exp4j.Expression
 import net.objecthunter.exp4j.ExpressionBuilder
-import android.util.Log
 
 lateinit var equation : String
-lateinit var view: TextView
+lateinit var viewCalc: TextView
 
 class CalcActivity : AppCompatActivity(), OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.calc_activity)
 
-        view = findViewById(R.id.eqView)
-        view.movementMethod = ScrollingMovementMethod()
+        viewCalc = findViewById(R.id.eqView)
+        viewCalc.movementMethod = ScrollingMovementMethod()
         equation = ""
 
         // create listeners for buttons
@@ -117,18 +115,18 @@ class CalcActivity : AppCompatActivity(), OnClickListener {
                 if(result.last().code == 48){  // if double decimal place is 0, remove it
                     result = result.dropLast(2)
                 }
-                view.text = result
+                viewCalc.text = result
             }
             catch(e: java.lang.IllegalArgumentException){
-                view.text = "Syntax Error"
+                viewCalc.text = "Syntax Error"
                 return
             }
             catch(e: java.lang.ArithmeticException){
-                view.text = "Math Error"
+                viewCalc.text = "Math Error"
                 return
             }
             catch(e: java.lang.NumberFormatException){
-                view.text = "Syntax Error"
+                viewCalc.text = "Syntax Error"
                 return
             }
             finally {
@@ -137,11 +135,11 @@ class CalcActivity : AppCompatActivity(), OnClickListener {
         }
         else if(s == "cls") {
             equation = ""
-            view.text = equation
+            viewCalc.text = equation
         }
         else{
             equation += s
-            view.text = equation
+            viewCalc.text = equation
         }
     }
 }
