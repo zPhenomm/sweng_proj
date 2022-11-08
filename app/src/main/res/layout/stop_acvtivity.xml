@@ -7,6 +7,20 @@
     tools:context=".StopActivity">
 
     <TextView
+        android:id="@+id/stopwatch"
+        android:layout_width="354dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/stopwatch"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/timer"
         android:layout_width="301dp"
         android:layout_height="57dp"

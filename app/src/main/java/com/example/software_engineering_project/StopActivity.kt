@@ -60,7 +60,7 @@ class StopActivity : AppCompatActivity(), OnClickListener {
 
 
     private fun runTimer() {
-        // Small code so unlike snake we can use a handler instead of a separate class in a thread
+        // small code so unlike snake we can use a handler instead of a separate class in a thread
         val handler = Handler()
 
         handler.post(object : Runnable {
