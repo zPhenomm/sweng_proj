@@ -1,27 +1,51 @@
+/**
+ * Game logic for Snake
+ *
+ * @author Max Hannawald
+ */
 package com.example.software_engineering_project
 
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
-import androidx.core.view.isVisible
 import kotlin.random.Random
 
+/**
+ * Class managing the Snake game
+ *
+ * @constructor Create new Snake game
+ */
 class SnakeGame{
-    // The snake is a list of coordinate tuples representing the body parts
-    var snakebody = arrayListOf<Pair<Int, Int>>()
-    val gridX = 16
-    val gridY = 16
-    var apple = Pair(1, 2)
-    var dir = 0
-    var dir_buffer = 0
-    var points = 0
+    /** The snake is a list of coordinate tuples representing the body parts */
+    private var snakebody = arrayListOf<Pair<Int, Int>>()
+    /** Game view will be separated in 16 blocks horizontally */
+    private val gridX = 16
+    /** Game view will be separated in 16 blocks vertically */
+    private val gridY = 16
+    /** The apple is a coordinate tuple */
+    private var apple = Pair(1, 2)
+    /** Direction of the head, 0 up, 1 right, 2 down, 3 left */
+    private var dir = 0
+    /** Direction input needs to be temporarily stored in a buffer */
+    private var dir_buffer = 0
+    /** Each eaten apple scores a point */
+    private var points = 0
+    /** Flag to indicate if game is running */
     var started = false
 
 
+    /**
+     * This function contains the game logic of Snake
+     *
+     * @param score TextView to display the score
+     * @param go TextView to display "Game over"
+     * @param view The custom View to display the game
+     * @param btn The Start/Stop/Reset button
+     */
     fun play(score: TextView, go: TextView, view: SnakeView, btn: Button){
-        var last = Pair(0, 0)
+        var last: Pair<Int, Int>
         var tmp: Pair<Int, Int>
         var flag: Boolean
+        // Add 3 body parts in the middle at the beginning
         snakebody.clear()
         snakebody.add(Pair(8, 8))
         snakebody.add(Pair(8, 9))
@@ -30,8 +54,9 @@ class SnakeGame{
         started = true
         view.started = started
         view.invalidate()
-        btn.setText("STOP")
+        btn.text = "STOP"
 
+        // game loop
         while(started){
             go.text = ""
             dir = dir_buffer  // take last button press from last sleep interval
@@ -85,7 +110,7 @@ class SnakeGame{
                 while(flag){
                     flag = false
                     apple = Pair(Random.nextInt(0, gridX), Random.nextInt(0, gridY))
-                    for(i in 0 until snakebody.size){  // TODO: this is kinda slow but idk how to do it differently
+                    for(i in 0 until snakebody.size){
                         if(snakebody[i] == apple){
                             flag = true
                             break
@@ -105,6 +130,7 @@ class SnakeGame{
                 break
             }
         }
+        // executes after game is lost or stopped
         go.text = "GAME OVER!"
         btn.text = "RESTART"
         apple = Pair(1, 2)
@@ -117,8 +143,13 @@ class SnakeGame{
     }
 
 
-    // direction input needs to be temporarily stored in a buffer, otherwise it's possible to do a 180
-    // by changing direction twice during one sleep cycle
+    /**
+     * Stores direction from buttons.
+     * Direction input needs to be temporarily stored in a buffer, otherwise it's possible to do a 180
+     * by changing direction twice during one sleep cycle
+     *
+     * @param d The direction from the buttons
+     */
     fun setDirection(d: Int){
         if(d == 0 && dir != 2){
             dir_buffer = d

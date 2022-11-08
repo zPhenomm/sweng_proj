@@ -1,3 +1,8 @@
+/**
+ * A calculator
+ *
+ * @author Max Hannawald
+ */
 package com.example.software_engineering_project
 
 import androidx.appcompat.app.AppCompatActivity
@@ -10,10 +15,18 @@ import android.widget.TextView
 import net.objecthunter.exp4j.Expression
 import net.objecthunter.exp4j.ExpressionBuilder
 
-lateinit var equation : String
-lateinit var viewCalc: TextView
 
+/**
+ * Creates calculator activity, maps buttons
+ *
+ * @constructor Create new calculator activity
+ */
 class CalcActivity : AppCompatActivity(), OnClickListener {
+    /** The equation that will be calculated */
+    private lateinit var equation : String
+    /** The View element to display equation and result */
+    private lateinit var viewCalc: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.calc_activity)
@@ -77,7 +90,7 @@ class CalcActivity : AppCompatActivity(), OnClickListener {
 
 
     override fun onClick(v: View) {
-        when(v.getId()){
+        when(v.id){
             R.id.calcBtn1 -> manageEq("1")
             R.id.calcBtn2 -> manageEq("2")
             R.id.calcBtn3 -> manageEq("3")
@@ -107,10 +120,17 @@ class CalcActivity : AppCompatActivity(), OnClickListener {
     }
 
 
-    fun manageEq(s: String){
+    /**
+     * Adds elements via the buttons to the equation,
+     * utilizes exp4j library to calculate from String.
+     * Catches possible exceptions from the calculation
+     *
+     * @param s The element to be added to the equation
+     */
+    private fun manageEq(s: String){
         if(s == "=") {
             try{
-                var e: Expression = ExpressionBuilder(equation).build()
+                val e: Expression = ExpressionBuilder(equation).build()
                 var result = e.evaluate().toString()
                 if(result.last().code == 48){  // if double decimal place is 0, remove it
                     result = result.dropLast(2)

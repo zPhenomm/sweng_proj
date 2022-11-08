@@ -1,8 +1,12 @@
+/**
+ * Find out what weather it is around the world
+ *
+ * @author Max Hannawald
+ */
 package com.example.software_engineering_project
 
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -12,12 +16,20 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 
-lateinit var locInput: EditText
-lateinit var weatherImage: ImageView
-lateinit var weatherText: TextView
 
-
+/**
+ * Weather activity. Sets buttons, requests weather from the openweathermap.org API
+ *
+ * @constructor Create new Weather activity
+ */
 class WeatherActivity : AppCompatActivity(){
+    /** Input for location */
+    private lateinit var locInput: EditText
+    /** Image View to display weather icon */
+    private lateinit var weatherImage: ImageView
+    /** Text View to display temperature and weather description */
+    private lateinit var weatherText: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.weather_activity)
@@ -33,7 +45,13 @@ class WeatherActivity : AppCompatActivity(){
     }
 
 
-    fun getWeather(loc: String){
+    /**
+     * Get weather data from requested location. Uses Volley Library to send the API request to
+     * openweathermap.org.
+     *
+     * @param loc The requested location
+     */
+    private fun getWeather(loc: String){
         val url = "https://api.openweathermap.org/data/2.5/weather?q=$loc&appid=76f9daa39f304e23a2e475d3950c7d20&units=metric"
         var weather = ""
         val queue = Volley.newRequestQueue(this)
@@ -58,6 +76,11 @@ class WeatherActivity : AppCompatActivity(){
     }
 
 
+    /**
+     * After getting the the full weather info, extract relevant Strings and display.
+     *
+     * @param weather The full weather info as a String
+     */
     fun displayWeather(weather: String){
         if(weather == "error"){
             weatherText.text = "Invalid location"
@@ -72,7 +95,7 @@ class WeatherActivity : AppCompatActivity(){
         var des = tmp.substring(tmp.indexOf("description"), tmp.indexOf("icon"))
         des = des.substring(des.indexOf(":") + 2, des.indexOf(",") - 1)
         tmp = tmp.substring(tmp.indexOf("temp"))
-        var temp = tmp.substring(tmp.indexOf(":") + 1, tmp.indexOf(",")) + "°"
+        val temp = tmp.substring(tmp.indexOf(":") + 1, tmp.indexOf(",")) + "°"
         // display info
         weatherText.text = des + "\n"  + temp
         val resID = resources.getIdentifier(icon, "drawable", packageName)

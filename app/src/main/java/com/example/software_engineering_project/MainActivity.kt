@@ -1,3 +1,8 @@
+/**
+ * The main menu of my Everyday Companion App
+ *
+ * @author Max Hannawald
+ */
 package com.example.software_engineering_project
 
 import android.content.Intent
@@ -11,6 +16,11 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
 
+/**
+ * Creates the main menu, maps buttons, sets the submenu for options
+ *
+ * @constructor Create the Main activity
+ */
 class MainActivity : AppCompatActivity(), OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +52,7 @@ class MainActivity : AppCompatActivity(), OnClickListener{
 
     // main menu buttons onclick
     override fun onClick(v: View) {
-        when(v.getId()){
+        when(v.id){
             R.id.btnWeather -> {val intent = Intent(this, WeatherActivity::class.java)
                 startActivity(intent)}
             R.id.btnCalc -> {val intent = Intent(this, CalcActivity::class.java)

@@ -1,14 +1,24 @@
+/**
+ * Activity to play the Snake game
+ *
+ * @author Max Hannawald
+ */
 package com.example.software_engineering_project
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import android.util.Log
 
 
+/**
+ * Snake activity, sets all buttons and creates the view and game logic.
+ * Also launches and ends the game.
+ *
+ * @constructor Create new Snake activity
+ */
 class SnakeActivity : AppCompatActivity() {
-
+    /** As we can't pause the main thread, the game needs to run on a separate one */
     lateinit var gamethread : Thread
 
     override fun onCreate(savedInstanceState: Bundle?) {

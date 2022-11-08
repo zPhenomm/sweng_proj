@@ -1,3 +1,8 @@
+/**
+ * A stopwatch
+ *
+ * @author Max Hannawald
+ */
 package com.example.software_engineering_project
 
 import android.os.Bundle
@@ -8,14 +13,23 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.Locale
-import android.util.Log
 
 
-var hundredths = 0
-var running = false
+/** The View to display the time */
 lateinit var viewClock: TextView
+/** Count of 100 milliseconds */
+var hundredths = 0
+/** Indicates if stopwatch is running */
+var running = false
 
+
+/**
+ * Stopwatch activity. Creates buttons and stops time.
+ *
+ * @constructor Create empty Stop activity
+ */
 class StopActivity : AppCompatActivity(), OnClickListener {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.stop_acvtivity)
@@ -41,7 +55,7 @@ class StopActivity : AppCompatActivity(), OnClickListener {
 
     // onclick action
     override fun onClick(v: View) {
-        when(v.getId()){
+        when(v.id){
             R.id.startClock -> running = true
             R.id.stopClock -> running = false
             R.id.resetClock -> {running = false
@@ -54,15 +68,19 @@ class StopActivity : AppCompatActivity(), OnClickListener {
     override fun onSaveInstanceState(
         savedInstanceState: Bundle
     ) {
-        savedInstanceState.putInt("seconds", hundredths)
+        savedInstanceState.putInt("hundredths", hundredths)
         savedInstanceState.putBoolean("running", running)
     }
 
 
+    /**
+     * Handles the stopwatch. Counts every 100 milliseconds
+     * Converts counter to other timeunits and displays.
+     */
     private fun runTimer() {
+
         // small code so unlike snake we can use a handler instead of a separate class in a thread
         val handler = Handler()
-
         handler.post(object : Runnable {
             override fun run() {
                 val hundred: Int = hundredths % 10
