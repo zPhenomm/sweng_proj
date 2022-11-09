@@ -95,7 +95,7 @@ class WeatherActivity : AppCompatActivity(){
         var des = tmp.substring(tmp.indexOf("description"), tmp.indexOf("icon"))
         des = des.substring(des.indexOf(":") + 2, des.indexOf(",") - 1)
         tmp = tmp.substring(tmp.indexOf("temp"))
-        val temp = tmp.substring(tmp.indexOf(":") + 1, tmp.indexOf(",")) + "°"
+        val temp = tmp.substring(tmp.indexOf(":") + 1, tmp.indexOf(",")) + "°C"
         // display info
         weatherText.text = des + "\n"  + temp
         val resID = resources.getIdentifier(icon, "drawable", packageName)

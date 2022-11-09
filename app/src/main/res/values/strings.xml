@@ -21,6 +21,8 @@
     <string name="calculator">Calculator</string>
     <string name="weather">Weather</string>
     <string name="stopwatch">Stopwatch</string>
+    <string name="notes">My Notes</string>
+    <string name="newnote">New Note</string>
     <string name="rad">* sin, cos, tan input in rad</string>
     <string name="weatherreq">Enter "city, country"</string>
 
