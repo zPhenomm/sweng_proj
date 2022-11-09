@@ -88,7 +88,6 @@ class CalcActivity : AppCompatActivity(), OnClickListener {
         btn.setOnClickListener(this)
     }
 
-
     override fun onClick(v: View) {
         when(v.id){
             R.id.calcBtn1 -> manageEq("1")
@@ -118,7 +117,6 @@ class CalcActivity : AppCompatActivity(), OnClickListener {
             R.id.calcBtnEq -> manageEq("=")
         }
     }
-
 
     /**
      * Adds elements via the buttons to the equation,

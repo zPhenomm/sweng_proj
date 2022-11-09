@@ -32,7 +32,6 @@ class SnakeGame{
     /** Flag to indicate if game is running */
     var started = false
 
-
     /**
      * This function contains the game logic of Snake
      *
@@ -141,7 +140,6 @@ class SnakeGame{
         btn.isClickable = true
         return
     }
-
 
     /**
      * Stores direction from buttons.

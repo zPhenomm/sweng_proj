@@ -44,7 +44,6 @@ class WeatherActivity : AppCompatActivity(){
         }
     }
 
-
     /**
      * Get weather data from requested location. Uses Volley Library to send the API request to
      * openweathermap.org.
@@ -74,7 +73,6 @@ class WeatherActivity : AppCompatActivity(){
             }
         })
     }
-
 
     /**
      * After getting the the full weather info, extract relevant Strings and display.

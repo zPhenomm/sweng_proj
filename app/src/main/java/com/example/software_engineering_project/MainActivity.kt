@@ -14,6 +14,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 
 
 /**
@@ -45,8 +46,15 @@ class MainActivity : AppCompatActivity(), OnClickListener{
         return true
     }
 
+    // toggle dark mode
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // handler for dot menu
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_UNSPECIFIED ||
+            AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+        else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
         return super.onOptionsItemSelected(item)
     }
 

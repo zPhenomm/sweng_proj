@@ -36,7 +36,6 @@ class SnakeView : View {
     /** Flag to indicate if game is running */
     var started = false
 
-
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         canvas?.drawRGB(0, 0, 0)

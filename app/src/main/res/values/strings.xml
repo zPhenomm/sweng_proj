@@ -5,7 +5,7 @@
     <string name="btnSnake">Play Snake</string>
     <string name="btnNotes">Notes</string>
     <string name="btnWeather">Weather</string>
-    <string name="btnOpt">Options</string>
+    <string name="btnOpt">Toggle DarkMode</string>
     <string name="title_activity_calc">calcActivity</string>
     <string name="score">score:</string>
     <string name="start">START!</string>

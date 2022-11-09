@@ -52,22 +52,24 @@ class SnakeActivity : AppCompatActivity() {
         btn = findViewById(R.id.btnStart)
         btn.setOnClickListener{
             if(!game.started){
-                //If thread was terminated before, create new one
+                // if thread was terminated before, create new one
                 if(!gamethread.isAlive){
                     gamethread = Thread{game.play(score, go, view, btn)}
                     gamethread.start()
                 }
             }
             else{
-                // Immediately end game thread when stop is pressed without waiting for sleep cycle
+                // immediately end game thread when stop is pressed without waiting for sleep cycle
                 if(gamethread.isAlive){
                     gamethread.interrupt()
                 }
             }
         }
     }
+
     override fun onBackPressed() {
         super.onBackPressed()
         gamethread.interrupt()
     }
 }
+

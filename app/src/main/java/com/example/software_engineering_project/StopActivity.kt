@@ -22,7 +22,6 @@ var hundredths = 0
 /** Indicates if stopwatch is running */
 var running = false
 
-
 /**
  * Stopwatch activity. Creates buttons and stops time.
  *
@@ -52,7 +51,6 @@ class StopActivity : AppCompatActivity(), OnClickListener {
         runTimer()
     }
 
-
     // onclick action
     override fun onClick(v: View) {
         when(v.id){
@@ -63,7 +61,6 @@ class StopActivity : AppCompatActivity(), OnClickListener {
         }
     }
 
-
     // restore states after return
     override fun onSaveInstanceState(
         savedInstanceState: Bundle
@@ -72,13 +69,11 @@ class StopActivity : AppCompatActivity(), OnClickListener {
         savedInstanceState.putBoolean("running", running)
     }
 
-
     /**
      * Handles the stopwatch. Counts every 100 milliseconds
      * Converts counter to other timeunits and displays.
      */
     private fun runTimer() {
-
         // small code so unlike snake we can use a handler instead of a separate class in a thread
         val handler = Handler()
         handler.post(object : Runnable {

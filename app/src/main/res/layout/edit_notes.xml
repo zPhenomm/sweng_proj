@@ -7,11 +7,11 @@
 
     <EditText
         android:id="@+id/editNote"
-        android:layout_width="351dp"
-        android:layout_height="480dp"
+        android:layout_width="303dp"
+        android:layout_height="452dp"
         android:layout_marginTop="32dp"
-        android:ems="10"
         android:background="@null"
+        android:ems="10"
         android:gravity="top|left"
         android:hint="@string/newnote"
         android:inputType="textMultiLine"
