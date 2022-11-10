@@ -107,7 +107,7 @@ class CalcActivity : AppCompatActivity(), OnClickListener {
             R.id.calcBtnSin -> manageEq("sin")
             R.id.calcBtnCos -> manageEq("cos")
             R.id.calcBtnTan -> manageEq("tan")
-            R.id.calcBtnRoot -> manageEq("sqrt")
+            R.id.calcBtnRoot -> manageEq("sqrt(")
             R.id.calcBtnExp -> manageEq("^")
             R.id.calcBtnDot -> manageEq(".")
             R.id.calcBtnOpenBracket -> manageEq("(")
@@ -132,6 +132,9 @@ class CalcActivity : AppCompatActivity(), OnClickListener {
                 var result = e.evaluate().toString()
                 if(result.last().code == 48){  // if double decimal place is 0, remove it
                     result = result.dropLast(2)
+                }
+                if(result == "NaN"){
+                    result = "Math error"
                 }
                 viewCalc.text = result
             }
