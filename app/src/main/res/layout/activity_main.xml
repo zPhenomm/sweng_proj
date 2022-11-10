@@ -56,7 +56,7 @@
         android:layout_height="65dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/btnSnake"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:typeface="normal"
         app:iconTint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/btnNotes"
