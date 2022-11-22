@@ -17,10 +17,10 @@ import org.junit.runner.RunWith
  * Instrumented tests for the app, which will execute on an Android device.
  */
 @RunWith(AndroidJUnit4::class)
-class TEDTesting {
+class TECTesting {
+    // test Calculator, sqrt(4) = 2 and sqrt(4 = Syntax Error
     @Test
     fun testCalculator() {
-        // test Calculator, sqrt(4) = 2 and sqrt(4 = Syntax Error
         var activityScenario = launch(CalcActivity::class.java)
         onView(withId(R.id.calcBtnRoot)).perform(ViewActions.click())
         onView(withId(R.id.calcBtn4)).perform(ViewActions.click())
@@ -36,9 +36,9 @@ class TEDTesting {
         onView(withId(R.id.eqView)).check(matches(withText("Syntax Error")))
         activityScenario.close()
     }
+    // test if inputting invalid location leads to correct feedback
     @Test
     fun testWeather() {
-        // test if inputting invalid location leads to correct feedback
         val activityScenario = launch(WeatherActivity::class.java)
         onView(withId(R.id.editLocation)).perform(typeText("nevergonnagiveyouupnevergonnaletyoudown"))
         onView(withId(R.id.btnGo)).perform(ViewActions.click())

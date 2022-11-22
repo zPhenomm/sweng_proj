@@ -6,7 +6,7 @@ import org.junit.Assert.*
 /**
  * Example local unit test, which will execute on the development machine.
  */
-class TEDUnitTesting {
+class TECUnitTesting {
     // test for processing of direction inputs for Snake
     @Test
     fun test_snake_direction() {
