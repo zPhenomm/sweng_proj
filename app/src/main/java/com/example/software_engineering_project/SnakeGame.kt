@@ -24,9 +24,9 @@ class SnakeGame{
     /** The apple is a coordinate tuple */
     private var apple = Pair(1, 2)
     /** Direction of the head, 0 up, 1 right, 2 down, 3 left */
-    private var dir = 0
+    var dir = 0
     /** Direction input needs to be temporarily stored in a buffer */
-    private var dir_buffer = 0
+    var dir_buffer = 0
     /** Each eaten apple scores a point */
     private var points = 0
     /** Flag to indicate if game is running */
