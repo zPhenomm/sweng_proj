@@ -15,6 +15,13 @@
         android:theme="@style/Theme.Software_engineering_project"
         tools:targetApi="31">
         <activity
+            android:name=".StopActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".NoteEditor"
             android:exported="false">
             <meta-data
@@ -37,13 +44,6 @@
         </activity>
         <activity
             android:name=".WeatherActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".StopActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
